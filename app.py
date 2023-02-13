@@ -26,7 +26,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-client = motor.motor_asyncio.AsyncIOMotorClient("mongodb+srv://tiamia:Ve6yYRwlN4WliSOd@cluster0.kuljwrw.mongodb.net/?retryWrites=true&w=majority")
+client = motor.motor_asyncio.AsyncIOMotorClient("mongodb+srv://tiamia:Ve6yYRwlN4WliSOd@cluster0.kuljwrw.mongodb.net/?retryWrites=true&w=majority", tls=True, tlsAllowInvalidCertificates=True)
 db = client.water_tank
 
 pydantic.json.ENCODERS_BY_TYPE[ObjectId]=str
